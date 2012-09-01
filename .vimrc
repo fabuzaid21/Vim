@@ -18,7 +18,6 @@ set mouse=a
 syntax on
 set history=1000
 set undolevels=1000
-set spell
 set backspace=indent,eol,start
 set ruler
 set cursorline
@@ -75,4 +74,6 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 filetype plugin indent on
 autocmd FileType c,cpp,java,js,javascript,tex,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd BufReadPre *.txt setlocal spell
+let g:indent_guides_enable_on_vim_startup = 1
 highlight SpellBad term=underline gui=undercurl guisp=Orange
