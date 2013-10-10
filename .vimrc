@@ -38,6 +38,7 @@ set switchbuf=useopen
 set scrolljump=5
 set scrolloff=3
 set gdefault
+set shell=bash\ --login
 nnoremap ' `
 nnoremap ` '
 nnoremap ; :
