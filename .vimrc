@@ -28,7 +28,6 @@ set wildmenu
 set wildmode=list:longest,full
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.a,*.o,*.aux,*.out
 set showbreak=>
-set pastetoggle=<F2>
 set incsearch
 set hlsearch
 set ignorecase
@@ -79,3 +78,28 @@ autocmd BufReadPre *.txt setlocal spell
 autocmd BufReadPre *.tex setlocal spell
 let g:indent_guides_enable_on_vim_startup = 0
 highlight SpellBad term=underline gui=undercurl guisp=Orange
+" Automatically toggle/untoggle paste when
+" pasting something into vim (borrowed from: https://coderwall.com/p/if9mda)
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+" Navigate Vim's command-line using
+" normal Bash shortcuts (borrowed from: http://statico.github.io/vim.html)
+:cnoremap <C-a>  <Home>
+:cnoremap <C-b>  <Left>
+:cnoremap <C-f>  <Right>
+:cnoremap <C-d>  <Delete>
+:cnoremap <M-b>  <S-Left>
+:cnoremap <M-f>  <S-Right>
+:cnoremap <M-d>  <S-right><Delete>
+:cnoremap <Esc>b <S-Left>
+:cnoremap <Esc>f <S-Right>
+:cnoremap <Esc>d <S-right><Delete>
+:cnoremap <C-g>  <C-c>
