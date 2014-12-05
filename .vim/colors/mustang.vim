@@ -33,6 +33,7 @@ hi Folded 		guibg=#384048 guifg=#a0a8b0 gui=none ctermbg=4 ctermfg=248
 hi Title		guifg=#f6f3e8 guibg=NONE	gui=bold ctermfg=254 cterm=bold
 hi Visual		guifg=#faf4c6 guibg=#3c414c gui=none ctermfg=254 ctermbg=4
 hi SpecialKey	guifg=#808080 guibg=#343434 gui=none ctermfg=244 ctermbg=236
+hi SpellBad	ctermbg=1 cterm=none
 
 " Syntax highlighting
 hi Comment 		guifg=#808080 gui=italic ctermfg=244
