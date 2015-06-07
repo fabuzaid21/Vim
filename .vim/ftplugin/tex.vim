@@ -1,5 +1,5 @@
 setlocal iskeyword+=:,-
-setlocal makeprg=pdflatex\ -file-line-error\ -interaction=nonstopmode\ %
+setlocal makeprg=pdflatex\ -synctex=1\ -file-line-error\ -interaction=nonstopmode\ %
 
 inoremap <buffer> { {}<ESC>i
 inoremap <buffer> [ []<ESC>i
