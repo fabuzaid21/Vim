@@ -72,6 +72,8 @@ nmap <up> <C-W>k
 nmap <down> <C-W>j
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+execute pathogen#infect()
+let g:go_fmt_autosave = 0
 filetype plugin indent on
 autocmd FileType c,cpp,java,js,javascript,tex,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
 "autocmd BufReadPre *.txt setlocal spell
