@@ -44,6 +44,7 @@ nnoremap ; :
 nnoremap <Space> ;
 nnoremap j gj
 nnoremap k gk
+nnoremap J gJ
 vmap fj <ESC>
 imap fj <ESC>
 imap ( ()<Left>
@@ -79,6 +80,12 @@ autocmd FileType c,cpp,java,js,javascript,tex,php,python autocmd BufWritePre <bu
 "autocmd BufReadPre *.txt setlocal spell
 autocmd BufReadPre *.tex setlocal spell
 let g:indent_guides_enable_on_vim_startup = 0
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 " Automatically toggle/untoggle paste when
 " pasting something into vim (borrowed from: https://coderwall.com/p/if9mda)
