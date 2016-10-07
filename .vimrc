@@ -44,6 +44,7 @@ nnoremap ; :
 nnoremap <Space> ;
 nnoremap j gj
 nnoremap k gk
+nnoremap gJ J
 nnoremap J gJ
 vmap fj <ESC>
 imap fj <ESC>
