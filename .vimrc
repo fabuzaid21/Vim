@@ -1,5 +1,58 @@
-set nocompatible
-let mapleader = ","
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+" EasyMotion
+Plugin 'Lokaltog/vim-easymotion'
+" Surround
+Plugin 'tpope/vim-surround'
+" Auto-format everything
+Plugin 'chiel92/vim-autoformat'
+" PyFlakes
+Plugin 'kevinw/pyflakes-vim'
+" CSV files
+Plugin 'chrisbra/csv.vim'
+" Plugin 'vim-syntastic/syntastic'
+" Python Linter
+" Plugin 'andviro/flake8-vim'
+" clang-format
+" Plugin 'rhysd/vim-clang-format'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" So that YouCompleteMe checks for compilation errors in C/C++ files
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:formatter_yapf_style = 'pep8'
+" autocmd BufWritePost *.py call Flake8()
+" let g:syntastic_python_checkers = ['pyflakes']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+
+map <leader>c :YcmCompleter FixIt<CR>
+
+" My own stuff
+let mapleader = ','
 set encoding=utf-8
 set nu
 set binary
@@ -36,57 +89,35 @@ set hidden
 set switchbuf=useopen
 set scrolljump=5
 set scrolloff=3
-set gdefault
+set gdefault " Use global replace by default
 set shell=bash\ --login
-nnoremap ' `
-nnoremap ` '
+
+" 'fj' exits INSERT and VISUAL modes
+vmap fj <ESC>
+imap fj <ESC>
+" ,t -> jump between matching paren, bracket, etc.
+nnoremap <leader>t %
+" ; -> command
 nnoremap ; :
-nnoremap <Space> ;
+" Handle lines that wrap around correctly
 nnoremap j gj
 nnoremap k gk
 nnoremap gJ J
 nnoremap J gJ
-vmap fj <ESC>
-imap fj <ESC>
-imap ( ()<Left>
-imap [ []<Left>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-nnoremap <leader>t %
-map <silent> <leader>n :botright vnew<CR>  
-map <leader>b ^
-map <leader>e $
-nmap <silent> <leader>cv :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-nmap <silent> ,/ :nohlsearch<CR>
-nmap <silent> <leader>mk :make<CR>
+" Navigate between words (+ whitespace) using Tab and Back-slash
 nnoremap <Tab> W
 vnoremap <Tab> W
 nnoremap \ B
 vnoremap \ B
-vmap Q gq
-nmap Q gqap
-nmap <left> <C-W>h
-nmap <right> <C-W>l
-nmap <up> <C-W>k
-nmap <down> <C-W>j
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-execute pathogen#infect()
-let g:go_fmt_autosave = 0
-filetype plugin indent on
-autocmd FileType c,cpp,java,js,javascript,tex,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
-"autocmd BufReadPre *.txt setlocal spell
+" ,cv -> open .vimrc 
+nmap <silent> <leader>cv :e $MYVIMRC<CR>
+" ,sv -> source .vimrc to reload changes
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+" Hide search results
+nmap <silent> <leader>/ :nohlsearch<CR>
+" Check spelling in text files and tex files, highlight in red
+autocmd BufReadPre *.txt setlocal spell
 autocmd BufReadPre *.tex setlocal spell
-let g:indent_guides_enable_on_vim_startup = 0
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_interfaces = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 " Automatically toggle/untoggle paste when
 " pasting something into vim (borrowed from: https://coderwall.com/p/if9mda)

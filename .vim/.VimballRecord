@@ -1,1 +1,0 @@
-screen.vba: call delete('/home/fabuzaid/.vim/autoload/screen.vim')|call delete('/home/fabuzaid/.vim/doc/screen.txt')|call delete('/home/fabuzaid/.vim/plugin/screen.vim')
