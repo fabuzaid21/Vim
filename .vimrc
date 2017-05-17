@@ -21,6 +21,8 @@ Plugin 'chiel92/vim-autoformat'
 Plugin 'kevinw/pyflakes-vim'
 " CSV files
 Plugin 'chrisbra/csv.vim'
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
 " Plugin 'vim-syntastic/syntastic'
 " Python Linter
 " Plugin 'andviro/flake8-vim'
@@ -49,6 +51,7 @@ let g:formatter_yapf_style = 'pep8'
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 
+map <C-z> :NERDTreeToggle<CR>
 map <leader>c :YcmCompleter FixIt<CR>
 
 " My own stuff
