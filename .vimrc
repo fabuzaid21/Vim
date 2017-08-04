@@ -23,6 +23,8 @@ Plugin 'kevinw/pyflakes-vim'
 Plugin 'chrisbra/csv.vim'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
+" jq support
+Plugin 'vito-c/jq.vim'
 " Plugin 'vim-syntastic/syntastic'
 " Python Linter
 " Plugin 'andviro/flake8-vim'
