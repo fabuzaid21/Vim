@@ -25,6 +25,8 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'scrooloose/nerdtree'
 " jq support
 Plugin 'vito-c/jq.vim'
+" Scala support
+Plugin 'derekwyatt/vim-scala'
 " Plugin 'vim-syntastic/syntastic'
 " Python Linter
 " Plugin 'andviro/flake8-vim'
