@@ -60,6 +60,7 @@ map <leader>c :YcmCompleter FixIt<CR>
 
 " My own stuff
 let mapleader = ','
+set clipboard=unnamed
 set encoding=utf-8
 set nu
 set binary
