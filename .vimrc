@@ -126,6 +126,7 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 " Check spelling in text files and tex files, highlight in red
 autocmd BufReadPre *.txt setlocal spell
 autocmd BufReadPre *.tex setlocal spell
+autocmd BufReadPre *.md setlocal spell
 highlight SpellBad term=underline gui=undercurl guisp=Orange
 " Automatically toggle/untoggle paste when
 " pasting something into vim (borrowed from: https://coderwall.com/p/if9mda)
