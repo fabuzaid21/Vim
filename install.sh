@@ -14,8 +14,8 @@ vim +PluginInstall +qall
 
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer \
-	--go-completer \
+	--java-completer \
 	--js-completer \
 	--rust-completer \
-	--java-completer
+	--go-completer
 
