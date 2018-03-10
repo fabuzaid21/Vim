@@ -27,11 +27,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vito-c/jq.vim'
 " Scala support
 Plugin 'derekwyatt/vim-scala'
-" Plugin 'vim-syntastic/syntastic'
-" Python Linter
-" Plugin 'andviro/flake8-vim'
-" clang-format
-" Plugin 'rhysd/vim-clang-format'
+" Better status line
+Plugin 'vim-airline/vim-airline'
+" Git integration
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,17 +49,14 @@ filetype plugin indent on    " required
 " So that YouCompleteMe checks for compilation errors in C/C++ files
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:formatter_yapf_style = 'pep8'
-" autocmd BufWritePost *.py call Flake8()
-" let g:syntastic_python_checkers = ['pyflakes']
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
+let g:airline_powerline_fonts = 1
 
 map <C-z> :NERDTreeToggle<CR>
 map <leader>c :YcmCompleter FixIt<CR>
 
 " My own stuff
+"
 let mapleader = ','
-set clipboard=unnamed
 set encoding=utf-8
 set nu
 set binary
