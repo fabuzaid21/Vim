@@ -56,6 +56,7 @@ map <leader>c :YcmCompleter FixIt<CR>
 
 " My own stuff
 "
+set tags=~/tags
 let mapleader = ','
 set encoding=utf-8
 set nu
