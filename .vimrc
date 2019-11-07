@@ -31,6 +31,8 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'vim-airline/vim-airline'
 " Git integration
 Plugin 'tpope/vim-fugitive'
+" Tagbar
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,6 +55,7 @@ let g:airline_powerline_fonts = 1
 
 map <C-z> :NERDTreeToggle<CR>
 map <leader>c :YcmCompleter FixIt<CR>
+nmap <F5> :TagbarToggle<CR>
 
 " My own stuff
 "
