@@ -61,6 +61,7 @@ nmap <F5> :TagbarToggle<CR>
 
 " My own stuff
 "
+set pastetoggle=<F2>
 set tags=~/tags
 let mapleader = ','
 set encoding=utf-8
