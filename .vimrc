@@ -33,8 +33,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 " Tagbar
 Plugin 'majutsushi/tagbar'
-" Julia support
-Plugin 'JuliaEditorSupport/julia-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
