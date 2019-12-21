@@ -13,8 +13,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 " EasyMotion
 Plugin 'Lokaltog/vim-easymotion'
-" Surround
-Plugin 'tpope/vim-surround'
+" Vim Sandwich
+Plugin 'machakann/vim-sandwich'
 " Auto-format everything
 Plugin 'chiel92/vim-autoformat'
 " PyFlakes
@@ -35,6 +35,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 " Julia support
 Plugin 'JuliaEditorSupport/julia-vim'
+" Typescript syntax highlighting
+Plugin 'leafgarland/typescript-vim'
+" Ctrl P
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,17 +56,31 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " So that YouCompleteMe checks for compilation errors in C/C++ files
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = 'python'
+map <leader>c :YcmCompleter FixIt<CR>
+
 let g:formatter_yapf_style = 'pep8'
 let g:airline_powerline_fonts = 1
+
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+" runtime macros/sandwich/keymap/surround.vim
+
+" Ctrl P config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Ignore build files from Rust and Java. (Borrowed from Shoumik)
+set wildignore+=*/target/debug/*,*/target/release/*,*/target/doc/*,*.class,*.jar
 
 map <C-z> :NERDTreeToggle<CR>
 map <leader>c :YcmCompleter FixIt<CR>
 nmap <F5> :TagbarToggle<CR>
+map <leader>c :YcmCompleter FixIt<CR>
 
 " My own stuff
-"
 set pastetoggle=<F2>
 set tags=~/tags
+set clipboard=unnamed
 let mapleader = ','
 set encoding=utf-8
 set nu

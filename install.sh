@@ -4,6 +4,7 @@ set -x
 
 # sudo apt-get install build-essential cmake python-dev python3-dev
 
+rm -rf .vim && git checkout .vim # reset .vim folder
 cd $HOME
 rm -rf .vim .vimrc
 ln -s Vim/.vimrc
@@ -17,5 +18,6 @@ cd ~/.vim/bundle/YouCompleteMe
 	--java-completer \
 	--js-completer \
 	--rust-completer \
+        --ts-completer \
 	--go-completer
 
